@@ -1,5 +1,20 @@
 # La tribu
 
+## Version GitHub Pages — sans inscription
+
+L’entrée `index.html` à la racine fonctionne directement sur GitHub Pages. Aucun serveur Python, installation ou compte externe n’est nécessaire pour cette version. Dans GitHub **Settings → Pages**, choisir **Deploy from a branch → main → / (root)**. Le fichier `.nojekyll` évite une transformation Jekyll. Les fichiers utilisent des chemins relatifs compatibles avec le sous-dossier du dépôt.
+
+- Enfants : clic direct sur Alice, Anaëlle ou Tiziano, sans code ni inscription.
+- Parents : clic sur Parent test, puis code 1234. Ce code est un verrou d’interface, **pas une authentification sécurisée**. Il est forcément visible dans une application entièrement statique.
+- Tâches, photos réduites en JPEG, validations, notifications, défis et montants sont enregistrés dans IndexedDB, **sur le navigateur de cet appareil uniquement**. Les sessions de profil sont propres à chaque onglet.
+- Aucun fichier photo ou donnée d’usage n’est envoyé à GitHub. Le code et les fichiers statiques sont publics selon les paramètres du dépôt.
+- **Aucune synchronisation entre appareils.** Les parents doivent ouvrir le profil parent sur la même tablette/le même navigateur pour voir et valider les photos des enfants. Un autre téléphone commence avec son propre suivi vide. Les alertes restent dans le site local ; ni SMS ni push.
+- Effacer les données du navigateur, changer de navigateur ou utiliser une session privée peut faire perdre le suivi. Cette version ne propose pas encore de sauvegarde/export ni de restauration. Le suivi de l’ancienne base Python n’est pas importé automatiquement.
+
+Test statique local : depuis `/workspace`, lancer `python3 -m http.server 8080 --bind 127.0.0.1`, puis exécuter `node tests/pages-browser.cjs` avec Playwright et Chromium disponibles. Le test utilise des contextes de navigateur isolés, valide les chemins de dépôt, les profils, le code parent, les photos, leur conservation après rechargement, les validations, les défis et les formats mobile/tablette/ordinateur. Il vérifie aussi que les données d’un navigateur ne sont pas visibles dans un autre.
+
+Les sections suivantes décrivent l’ancienne **version serveur Python**, conservée comme autre option pour un futur usage partagé. Elle n’est pas exécutée par GitHub Pages.
+
 Un site familial en français pour Alice, Anaëlle et Tiziano. Interface responsive pour ordinateur, iPhone et iPad ; serveur Flask, SQLite et photos privées. Aucun service payant requis pour le fonctionnement courant.
 
 ## Démarrage dans cet environnement
