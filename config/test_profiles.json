@@ -1,0 +1,13 @@
+{
+  "environment": "development",
+  "profiles": [
+    {
+      "id": "parent-test",
+      "display_name": "Parent test",
+      "role": "parent",
+      "temporary": true,
+      "test_only": true,
+      "pin_hash": "scrypt$d83b835c9709c331b30b4eb712a17518$927849021b48026057d43916f9045d2f30664a740a35de352044bf16245e44358dce4b9fe13ad35354b86ad19239a132e4a1281fe783b34cc9467f3ff5288fc0"
+    }
+  ]
+}

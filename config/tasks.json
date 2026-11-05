@@ -1,0 +1,85 @@
+{
+  "children": [
+    "Alice",
+    "Anaëlle",
+    "Tiziano"
+  ],
+  "notification_channel": "in_app",
+  "sms_enabled": false,
+  "tasks": [
+    {
+      "id": "table-matin",
+      "title": "Mettre la table le matin",
+      "points": 5,
+      "frequency": "daily",
+      "category": "bonus"
+    },
+    {
+      "id": "table-midi",
+      "title": "Mettre la table le midi",
+      "points": 5,
+      "frequency": "presence_days",
+      "category": "bonus"
+    },
+    {
+      "id": "table-soir",
+      "title": "Mettre la table le soir",
+      "points": 5,
+      "frequency": "daily",
+      "category": "bonus"
+    },
+    {
+      "id": "chambre",
+      "title": "Ranger sa chambre",
+      "points": 0,
+      "frequency": "daily",
+      "category": "required"
+    },
+    {
+      "id": "lit",
+      "title": "Faire son lit",
+      "points": 0,
+      "frequency": "daily",
+      "category": "required"
+    },
+    {
+      "id": "vider-lave-vaisselle",
+      "title": "Vider le lave-vaisselle",
+      "points": 10,
+      "frequency": "daily",
+      "category": "bonus"
+    },
+    {
+      "id": "remplir-lave-vaisselle",
+      "title": "Remplir le lave-vaisselle",
+      "points": 10,
+      "frequency": "daily",
+      "category": "bonus"
+    },
+    {
+      "id": "linge",
+      "title": "Plier le linge",
+      "points": 15,
+      "frequency": "as_needed",
+      "category": "bonus"
+    }
+  ],
+  "allowance": {
+    "period": "weekly",
+    "week_starts_on": "monday",
+    "required_task_ids": [
+      "chambre",
+      "lit"
+    ],
+    "requires_parent_approval": true,
+    "required_days_per_week": 7,
+    "bonus_point_value": null,
+    "bonus_cannot_replace_required_tasks": true,
+    "currency": "CHF",
+    "base_amount_minor_by_child": {
+      "alice": 500,
+      "anaelle": 500,
+      "tiziano": 2500
+    }
+  }
+}
